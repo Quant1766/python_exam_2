@@ -6,24 +6,15 @@
 
 import re
 
-def getUserEmail():
+def getUserPhone():
 
-    user_input = input(?)
+    user_input = input("Entet phone number: ")
 
-    if (re.match(r"?", user_input) ):
-        return user_input
-    else:
-        return False
-
-
-"""
-    Написати валідатор ....
-    Правило валідації
-"""
-
-def getProductName():
-    #TODO
-
+    while not (re.match(r"^\(\d{3}\)-\d{3}-\d{4}$", user_input) ):
+        user_input = input("Entet phone number: ")
+    return user_input
+    # else:
+    #     return False
 
 
 """
@@ -31,6 +22,20 @@ def getProductName():
     Правило валідації
 """
 
+# def getProductName():
+#     #TODO
 
-def getProductPrice():
-    #TODO
+
+
+"""
+    Написати валідатор ....
+    Правило валідації
+"""
+
+
+def getHotelPrice():
+    user_input = input("Entet price: ")
+
+    while not (re.match(r"^\d{4}$", user_input)):
+        user_input = input("Entet price: ")
+    return  user_input

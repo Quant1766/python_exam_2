@@ -5,12 +5,12 @@ import plotly
 import plotly.graph_objs as go
 
 
-#Вивести стовпчикову діаграму: хто скільки грошей витратив.
+dataset_hostels_mach = [len(dataset[i]['hotels'].keys()) for i in dataset.keys()]
 
-data = ?
+data = go.Bar(
+        x= list(dataset.keys()),
+        y= dataset_hostels_mach,)
 
-diagram = ?
 
-fig = ?
-
-plotly.offline.plot(?)
+fig = go.Figure(data=[data])
+plotly.offline.plot(fig, filename='hotels.html')
